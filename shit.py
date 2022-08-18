@@ -1,12 +1,5 @@
 from pyrogram import Client
 import pyrogram
-
-from pyrogram.raw.functions.messages import GetMessageReactionsList
-import pandas as pd
-
-import asyncio
-import os
-from winsound import Beep
 import sys
 
 def main():
