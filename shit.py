@@ -8,7 +8,7 @@ def main():
     phone_number = '+380666037197'
     masha_chat_id = -1001621051079
     svolota_id = -1001762078325
-    start = int(time() / 60)
+
 
     client = Client('me7', api_id=api_id, api_hash=api_hash)
 
