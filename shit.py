@@ -17,10 +17,16 @@ def main():
     def message_handler(client: pyrogram.Client, message: pyrogram.types.Message):
         if message.chat.id in [svolota_id, masha_chat_id]:
             client.send_reaction(message.chat.id, message.id, '💩')
-        
+
+        client.send_message(svolota_id, str(message.id))
         client.forward_messages(svolota_id, message.chat.id, message.id)
 
+    @client.on_deleted_messages()
+    def delete_message_handler(client: pyrogram.Client, message):
+        client.send_message(client.me.id, str(message[0].id))
+
     client.run()
+
 
 
 if __name__ == "__main__":
